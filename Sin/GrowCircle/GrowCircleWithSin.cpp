@@ -1,11 +1,8 @@
-```cpp
 #include <GLFW/glfw3.h>
 #include <cmath>
 
-
 // Pi float 
 const float PI = 3.14159265358979323846f;
-
 
 // Draw a circle to the window
 void drawCircle(float centerX, float centerY, float radius, int numSegments)
@@ -84,4 +81,3 @@ int main(void)
     glfwTerminate();
     return 0;
 }
-```
