@@ -1,3 +1,4 @@
+'''cpp
 #include <GLFW/glfw3.h>
 #include <cmath>
 
@@ -83,3 +84,4 @@ int main(void)
     glfwTerminate();
     return 0;
 }
+'''
