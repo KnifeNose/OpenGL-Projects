@@ -4,10 +4,11 @@
 #include <random>
 #include <ctime>
 
+// PI
 const float PI = 3.14159265358979323846f;
 
 float damping = 0.99f;
-
+// Force up
 float rising[2] = { 0.0f, 0.00002f };
 
 //create a unsigned variable that gives a number that chages each second
@@ -22,6 +23,7 @@ std::mt19937 gen(seed);
 
 std::uniform_real_distribution<> dist(-0.0007f, 0.0007f);
 
+// Particle constructor 
 Particle::Particle()
 {
 	position[0] = 0.0f;
@@ -36,6 +38,7 @@ Particle::Particle()
 	isFirstFrame = true;
 }
 
+// Draw the particle, circle shape
 void Particle::drawShape(float x, float y, float radius, int seg)
 {
 	glBegin(GL_TRIANGLE_FAN);
@@ -48,6 +51,7 @@ void Particle::drawShape(float x, float y, float radius, int seg)
 	glEnd();
 }
 
+// Update motion
 void Particle::motion()
 {
 	velocity[0] *= damping;
@@ -64,6 +68,7 @@ void Particle::motion()
 	health = health - 0.002f;
 }
 
+// Set starting position
 void Particle::startPos(float x, float y)
 {
 	position[0] = x;
@@ -72,22 +77,26 @@ void Particle::startPos(float x, float y)
 	isFirstFrame = false;
 }
 
+// Draw the particle
 void Particle::draw()
 {
 	drawShape(position[0], position[1], 0.0028f, 32);
 }
 
+// Function to add a force 
 void Particle::addForce(float force[2])
 {
 	acceleration[0] += force[0];
 	acceleration[1] += force[1];
 }
 
+// Constant force being applied upwards 
 void Particle::forces()
 {
 	addForce(rising);
 }
 
+// Add a starting force to the particle in a random direction 
 void Particle::startForce()
 {
 	float randomForce[2] = { (float)dist(gen), (float)dist(gen) };
@@ -95,6 +104,7 @@ void Particle::startForce()
 	addForce(randomForce);
 }
 
+// Set the particles color
 void Particle::color()
 {
 	glColor4f(0.4f, 0.4f, 0.4f, health);
