@@ -3,8 +3,10 @@
 #include <vector>
 #include <cmath>
 
+// PI
 const float PI = 3.14159265358979323846f;
 
+// Mouse location
 float worldX = 0.0f;
 float worldY = 0.0f;
 
@@ -19,7 +21,7 @@ void cursor_position_callback(GLFWwindow* window, double xpos, double ypos)
 
 }
 
-
+// Draw a circle
 void drawCircle(float x, float y, float r, int seg)
 {
     glBegin(GL_TRIANGLE_FAN);
@@ -32,6 +34,7 @@ void drawCircle(float x, float y, float r, int seg)
     glEnd();
 }
 
+// Draw a line
 void drawLine(float x1, float y1, float x2, float y2)
 {
     glBegin(GL_LINES);
@@ -65,8 +68,10 @@ int main(void)
     // Set the blend function
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
+    // Vector of paricles 
     std::vector<Particle> p;
 
+    // Variables 
     float circleX = 0.0f;
     float circleXForce = 0.0f;
 
@@ -74,9 +79,10 @@ int main(void)
     while (!glfwWindowShouldClose(window))
     {
         
+        // Wind force 
         float wind[2] = { circleXForce, 0.0f };
         
-        
+        // Spawn particles 
         for (int i = 0; i < 6; i++) 
         {
         p.push_back(Particle());
@@ -85,6 +91,7 @@ int main(void)
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
 
+        // Update partcles 
         for (Particle& part : p)
         {
             part.color();
@@ -103,6 +110,7 @@ int main(void)
 
 
 
+        // Move the slider with a click
         if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
         {
             if (worldX < 0.5f && worldX > -0.5f)
@@ -113,10 +121,8 @@ int main(void)
         }
 
         circleXForce = circleX / 100000;
-
-
-
-
+        
+        // Draw
         glColor3f(0.8f, 0.1f, 0.1f);
         drawLine(-0.5f, 0.7f, 0.5f, 0.7f);
 
