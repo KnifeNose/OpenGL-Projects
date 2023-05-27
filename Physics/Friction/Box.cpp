@@ -1,6 +1,7 @@
 #include "Box.h"
 #include <GLFW/glfw3.h>
 
+// Draw box
 void Box::drawBox(float x, float y, float width, float height)
 {
 	glBegin(GL_QUADS);
@@ -11,6 +12,7 @@ void Box::drawBox(float x, float y, float width, float height)
 	glEnd();
 }
 
+// Motion
 void Box::motion()
 {
 	posX += rectVelocityX;
@@ -18,11 +20,13 @@ void Box::motion()
 	rectVelocityX += rectAccelerationX;
 }
 
+// Add a force
 void Box::addForce(float x)
 {
 	rectAccelerationX += x;
 }
 
+// Apply friction 
 void Box::addFriction()
 {
 	if (posX > -0.4f && posX < 0.5f)
