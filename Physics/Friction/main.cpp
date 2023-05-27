@@ -31,6 +31,7 @@ int main(void)
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
 
+        // Draw ground
         float x = -1;
     for (int i = 0; i < 5; i++)
     {
@@ -40,9 +41,10 @@ int main(void)
         grounds[i].drawGround(x, y, 0.5f, 0.5f);
         x += temp;
     }
-
+        // Color
         glColor3f(0.0f, 1.0f, 0.0f);
 
+        // Box functionality 
         b.drawBox(b.posX, b.posY, 0.2f, 0.1f);
         b.motion();
         b.addForce(0.0000001f);
