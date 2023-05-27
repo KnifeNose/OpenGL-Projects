@@ -1,6 +1,7 @@
 #include "Ground.h"
 #include <GLFW/glfw3.h>
 
+// Draw ground
 void Ground::drawGround(float x, float y, float width, float height) 
 {
 	glBegin(GL_QUADS);
