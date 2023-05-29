@@ -2,9 +2,10 @@
 #include <GLFW/glfw3.h>
 #include <cmath>
 
+// PI
 const float PI = 3.14159265358979323846f;
 
-
+// Draw circle
 void Mover::drawCircle(float circleX, float circleY, float circleRadius, int numOfSeg)
 {
 	glBegin(GL_TRIANGLE_FAN);
@@ -19,6 +20,7 @@ void Mover::drawCircle(float circleX, float circleY, float circleRadius, int num
     glEnd();
 }
 
+// Draw line
 void Mover::drawLine(float x1, float y1, float x2, float y2)
 {
     glBegin(GL_LINES);
@@ -27,6 +29,7 @@ void Mover::drawLine(float x1, float y1, float x2, float y2)
     glEnd();
 }
 
+// Circle momement
 void Mover::circleMove()
 {
     circleX = r * cos(a);
