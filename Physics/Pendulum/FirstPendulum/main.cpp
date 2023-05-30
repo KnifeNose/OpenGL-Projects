@@ -29,8 +29,11 @@ int main(void)
     {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
-
+        
+        // Pendulum physics
         pend.addMotion();
+        
+        // Draw pendulum
         pend.drawCircle(pend.circleX, pend.circleY, 0.1f, 32);
         pend.drawLine(pend.circleX, pend.circleY, pend.originX, pend.originY);
 
