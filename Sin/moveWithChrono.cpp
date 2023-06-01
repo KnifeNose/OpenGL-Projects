@@ -2,11 +2,13 @@
 #include <cmath>
 #include <chrono>
 
+// Variables
 const float PI = 3.14159265358979323846f;
 float y = 0;
 float a = 0.4;
 float f = 1;
 
+// Draw circle
 void drawCircle(float x, float y, float radius, int seg)
 {
     glBegin(GL_TRIANGLE_FAN);
