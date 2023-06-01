@@ -20,7 +20,8 @@ int main(void)
 
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
-
+    
+    // Spring
     Particle p1(0.5f, 0.0f);
     Particle p2(0.0f, 0.0f);
     Spring spring(0.001f, 0.2f, p1, p2);
@@ -30,11 +31,13 @@ int main(void)
     {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
-
+        
+        // Spring physics 
         spring.update();
         p1.update();
         p2.update();
-
+        
+        // Draw spring 
         spring.drawline();
         p1.drawCircle();
         p2.drawCircle();
