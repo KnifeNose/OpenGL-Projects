@@ -2,7 +2,7 @@
 #include "Circle.h"
 #include <cmath>
 
-
+// Mouse position
 float worldX = 0.0f;
 float worldY = 0.0f;
 
