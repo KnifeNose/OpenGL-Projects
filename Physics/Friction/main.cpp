@@ -24,7 +24,6 @@ int main(void)
     Ground grounds[5];
     Box b;
 
-
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
