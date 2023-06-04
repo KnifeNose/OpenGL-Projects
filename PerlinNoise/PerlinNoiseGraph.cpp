@@ -10,6 +10,7 @@ float xPos = 0.003125;
 float inc = 0.01f;
 float start = 0;
 
+// Draw square
 void drawSquare(float x1, float y1, float width, float height)
 {
     glBegin(GL_QUADS);
