@@ -2,10 +2,11 @@
 #include "Particle.h"
 #include "PSystem.h"
 
+// Mouse position
 float worldX = 0.0f;
 float worldY = 0.0f;
 
-// Get cursor position
+// Get mouse position
 void cursor_position_callback(GLFWwindow* window, double xpos, double ypos)
 {
     int win_width, win_height;
