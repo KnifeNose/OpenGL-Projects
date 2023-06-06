@@ -27,9 +27,11 @@ int main(void)
     {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
-
+        
+        // Draw circle
         glColor3f(0.1f, 0.6f, 0.1f);
         move.drawCircle(move.circleX, move.circleY, 0.1f, 32);
+        // Move circle
         move.circleMove();
         move.drawLine(0, 0, move.circleX, move.circleY);
 
