@@ -4,7 +4,7 @@
 #include <iostream>
 #include <array>
 
-// draw a line
+// Draw a line
 void drawLine(float x1, float y1, float x2, float y2)
 {
     glBegin(GL_LINES);
@@ -13,7 +13,7 @@ void drawLine(float x1, float y1, float x2, float y2)
     glEnd();
 }
 
-// draw a rectangle
+// Draw a rectangle
 void drawRectangle(float rectX, float rectY, float rectWidth, float rectHeight)
 {
     glBegin(GL_QUADS);
@@ -52,7 +52,7 @@ int main(void)
 
 
 
-    // using a seed to generate a different set of random numbers depending on the time
+    // Using a seed to generate a different set of random numbers depending on the time
     unsigned seed = static_cast<unsigned>(std::time(nullptr));
     std::mt19937 gen(seed);
     std::uniform_int_distribution<> dist(0, 99);
@@ -64,7 +64,7 @@ int main(void)
         int randomNumber1 = dist(gen);
 
 
-        // random number is used to change height of the rectangle
+        // Random number is used to change height of the rectangle
         if (totalChange < totalChangeMax)
         {
             heightsArray[randomNumber1] += 0.1f;
@@ -76,7 +76,7 @@ int main(void)
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
 
-        // the array is used to calculate the heights of the rectangles
+        // The array is used to calculate the heights of the rectangles
         glColor3f(0, 0.5f, 0);
         for (int i = 0; i < numberOfRects; i++)
         {
