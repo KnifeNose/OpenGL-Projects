@@ -5,6 +5,7 @@
 #include <array>
 #include <cmath>
 
+// PI
 const float PI = 3.14159265358979323846f;
 
 void drawBellCurve(float mu, float sigma, float minX, float maxX)
@@ -43,7 +44,7 @@ void drawRectangle(float rectX, float rectY, float rectWidth, float rectHeight)
     glEnd();
 }
 
-// random number is chosen with a normal distribution 
+// Random number is chosen with a normal distribution 
 float randomGaussian(float mean, float stddev)
 {
     auto seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
@@ -85,7 +86,7 @@ int main(void)
         int randomNumber1 = std::lround(randomGaussian(50.0f, 20.0f));
 
 
-        // random number is used to change height of the rectangle if it is within range
+        // Random number is used to change height of the rectangle if it is within range
         if (totalChange < totalChangeMax && randomNumber1 >= 0 && randomNumber1 < 100)
         {
             heightsArray[randomNumber1] += 0.1f;
@@ -97,7 +98,7 @@ int main(void)
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
 
-        // the array is used to calculate the heights of the rectangles
+        // The array is used to calculate the heights of the rectangles
         glColor3f(0, 0.5f, 0);
         for (int i = 0; i < numberOfRects; i++)
         {
